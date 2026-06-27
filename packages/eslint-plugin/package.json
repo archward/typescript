@@ -2,9 +2,27 @@
   "name": "@ddd-arch/eslint-plugin",
   "version": "0.0.0",
   "description": "Deterministic DDD and clean-architecture ESLint rules for NestJS projects.",
+  "keywords": [
+    "eslint",
+    "eslint-plugin",
+    "ddd",
+    "domain-driven-design",
+    "clean-architecture",
+    "hexagonal",
+    "nestjs",
+    "adr",
+    "architecture"
+  ],
   "type": "module",
   "license": "MIT",
   "author": "Amr Abdelaziz (https://github.com/swe-amr-abdelaziz)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/swe-amr-abdelaziz/ddd-arch.git",
+    "directory": "packages/eslint-plugin"
+  },
+  "homepage": "https://github.com/swe-amr-abdelaziz/ddd-arch/tree/main/packages/eslint-plugin#readme",
+  "bugs": "https://github.com/swe-amr-abdelaziz/ddd-arch/issues",
   "main": "src/index.mjs",
   "types": "src/index.d.ts",
   "exports": {
@@ -16,6 +34,9 @@
   "files": [
     "src"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "test": "node --test",
     "doc": "eslint-doc-generator",
