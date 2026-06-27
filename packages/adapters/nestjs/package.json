@@ -1,5 +1,5 @@
 {
-  "name": "nestjs-ddd-adapters",
+  "name": "@ddd-arch/nestjs",
   "version": "0.0.0",
   "description": "NestJS adapters for the DDD kernel.",
   "type": "module",

@@ -28,7 +28,7 @@ export default {
     docs: {
       description:
         'Enforce ADR structure: filename, an H1 title matching it, a valid date, the ordered sections, a status from the allowed set, no sub-headings, and per-section length limits.',
-      url: 'https://github.com/swe-amr-abdelaziz/nestjs-ddd-conventions/blob/main/packages/eslint-plugin-nestjs-ddd/docs/rules/base/adr-structure.md',
+      url: 'https://github.com/swe-amr-abdelaziz/ddd-arch/blob/main/packages/eslint-plugin/docs/rules/base/adr-structure.md',
     },
     schema: [
       {

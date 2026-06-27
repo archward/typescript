@@ -5,7 +5,7 @@ export default {
     docs: {
       description:
         'Disallow comments except tool directives and JSDoc type annotations; rationale belongs in commit messages, ADRs, or docs.',
-      url: 'https://github.com/swe-amr-abdelaziz/nestjs-ddd-conventions/blob/main/packages/eslint-plugin-nestjs-ddd/docs/rules/base/no-comments.md',
+      url: 'https://github.com/swe-amr-abdelaziz/ddd-arch/blob/main/packages/eslint-plugin/docs/rules/base/no-comments.md',
     },
     schema: [
       {

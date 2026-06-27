@@ -1,5 +1,5 @@
 {
-  "name": "nestjs-ddd-kernel",
+  "name": "@ddd-arch/kernel",
   "version": "0.0.0",
   "description": "Framework-free DDD building blocks.",
   "type": "module",

@@ -1,21 +1,21 @@
-# eslint-plugin-nestjs-ddd
+# @ddd-arch/eslint-plugin
 
 Deterministic DDD and clean-architecture ESLint rules for NestJS projects.
 
 ## Install
 
 ```sh
-pnpm add -D eslint-plugin-nestjs-ddd
+pnpm add -D @ddd-arch/eslint-plugin
 ```
 
 ## Usage
 
 ```js
 // eslint.config.mjs
-import nestjsDdd from 'eslint-plugin-nestjs-ddd';
+import ddd from '@ddd-arch/eslint-plugin';
 
 export default [
-  ...nestjsDdd.configs.adr, // opt-in: lint docs/decisions/*.md
+  ...ddd.configs.adr, // opt-in: lint docs/decisions/*.md
 ];
 ```
 
