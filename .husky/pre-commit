@@ -1,3 +1,4 @@
+pnpm build
 pnpm lint-staged
 pnpm check:parity
 pnpm check:adr-numbering

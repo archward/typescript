@@ -1,0 +1,11 @@
+{
+  "threshold": 0,
+  "minTokens": 40,
+  "minLines": 3,
+  "mode": "mild",
+  "format": ["typescript"],
+  "reporters": ["console"],
+  "ignore": ["**/dist/**", "**/node_modules/**", "**/test/**"],
+  "gitignore": true,
+  "absolute": true
+}

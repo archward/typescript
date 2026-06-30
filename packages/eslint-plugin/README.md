@@ -28,7 +28,7 @@ export default [
 | Name                                                   | Description                                                                                                                                                                  | 🔧  |
 | :----------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-- |
 | [base/adr-structure](docs/rules/base/adr-structure.md) | Enforce ADR structure: filename, an H1 title matching it, a valid date, the ordered sections, a status from the allowed set, no sub-headings, and per-section length limits. | 🔧  |
-| [base/no-comments](docs/rules/base/no-comments.md)     | Disallow comments except tool directives and JSDoc type annotations; rationale belongs in commit messages, ADRs, or docs.                                                    |     |
+| [base/no-comments](docs/rules/base/no-comments.md)     | Disallow comments except tool directives; rationale belongs in commit messages, ADRs, or docs.                                                                               |     |
 
 <!-- end auto-generated rules list -->
 

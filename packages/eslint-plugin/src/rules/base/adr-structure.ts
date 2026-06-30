@@ -1,3 +1,6 @@
+import { createRule } from '@eslint-plugin/utils/create-rule';
+import type { Root } from '@eslint-plugin/utils/mdast';
+
 import {
   analyze,
   reportDate,
@@ -5,30 +8,23 @@ import {
   reportSectionBodies,
   reportSections,
   reportSubheadings,
-} from './adr-structure/checks.mjs';
-import { reportTitle } from './adr-structure/title.mjs';
+} from './adr-structure/checks';
+import { reportTitle } from './adr-structure/title';
+import type {
+  AdrMessageId,
+  AdrModel,
+  AdrOptions,
+  CheckedAdrModel,
+} from './adr-structure/types';
 
-export default {
+export default createRule<[AdrOptions], AdrMessageId>({
+  name: 'base/adr-structure',
   meta: {
     type: 'problem',
     fixable: 'code',
-    defaultOptions: [
-      {
-        sections: ['Status', 'Context', 'Decision', 'Consequences'],
-        statuses: ['Proposed', 'Accepted', 'Rejected', 'Deprecated'],
-        maxLength: {
-          Title: 80,
-          Status: 120,
-          Context: 600,
-          Decision: 600,
-          Consequences: 600,
-        },
-      },
-    ],
     docs: {
       description:
         'Enforce ADR structure: filename, an H1 title matching it, a valid date, the ordered sections, a status from the allowed set, no sub-headings, and per-section length limits.',
-      url: 'https://github.com/swe-amr-abdelaziz/ddd-arch/blob/main/packages/eslint-plugin/docs/rules/base/adr-structure.md',
     },
     schema: [
       {
@@ -84,23 +80,36 @@ export default {
       status: 'Status must be one of: {{allowed}}, or "Superseded by <link>".',
     },
   },
-  create(context) {
-    const [{ sections, statuses, maxLength }] = context.options;
-
+  defaultOptions: [
+    {
+      sections: ['Status', 'Context', 'Decision', 'Consequences'],
+      statuses: ['Proposed', 'Accepted', 'Rejected', 'Deprecated'],
+      maxLength: {
+        Title: 80,
+        Status: 120,
+        Context: 600,
+        Decision: 600,
+        Consequences: 600,
+      },
+    },
+  ],
+  create(context, [{ sections, statuses, maxLength }]) {
     return {
-      root(node) {
-        const model = analyze(context, node);
+      root: (node: unknown) => {
+        const root = node as Root;
+        const model: AdrModel = analyze(context, root);
         reportFilename(context, model);
         if (!model.h1) {
-          context.report({ loc: node.position, messageId: 'heading' });
+          context.report({ loc: root.position, messageId: 'heading' });
           return;
         }
-        reportTitle(context, model, maxLength);
-        reportDate(context, model);
+        const checked = model as CheckedAdrModel;
+        reportTitle(context, checked, maxLength);
+        reportDate(context, checked);
         reportSubheadings(context, model);
-        reportSections(context, model, sections);
+        reportSections(context, checked, sections);
         reportSectionBodies(context, model, sections, statuses, maxLength);
       },
     };
   },
-};
+});

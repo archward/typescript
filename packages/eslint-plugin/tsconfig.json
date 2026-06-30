@@ -1,0 +1,15 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "paths": {
+      "@eslint-plugin": ["./src/index.ts"],
+      "@eslint-plugin/*": ["./src/*"]
+    }
+  },
+  "include": [
+    "src/**/*.ts",
+    "test/**/*.ts",
+    "tsup.config.ts",
+    ".eslint-doc-generatorrc.ts"
+  ]
+}

@@ -2,10 +2,12 @@ import { execSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
 
 const base = process.env.BASE_REF ?? 'origin/main';
-const { adr } = JSON.parse(readFileSync('package.json', 'utf8'));
-const requireOn = adr?.requireOn ?? ['feat'];
+const pkg = JSON.parse(readFileSync('package.json', 'utf8')) as {
+  adr?: { requireOn?: string[] };
+};
+const requireOn = pkg.adr?.requireOn ?? ['feat'];
 
-const tryGit = (args) => {
+const tryGit = (args: string): string | null => {
   try {
     return execSync(`git ${args}`, {
       encoding: 'utf8',
@@ -21,15 +23,16 @@ if (tryGit(`rev-parse ${base}`) === null) {
   process.exit(0);
 }
 
-const lines = (out) => (out ? out.split('\n').filter(Boolean) : []);
+const lines = (out: string | null): string[] =>
+  out ? out.split('\n').filter(Boolean) : [];
 const commits = lines(tryGit(`log ${base}..HEAD --format=%s`));
 const changed = lines(tryGit(`diff --name-only ${base}...HEAD`));
 
 const triggers = new RegExp(`^(${requireOn.join('|')})(\\(.+\\))?!?:`);
-const ruleEntry = /^packages\/[^/]+\/src\/rules\/[^/]+\/[^/]+\.mjs$/;
+const ruleEntry = /^packages\/[^/]+\/src\/rules\/[^/]+\/[^/]+\.ts$/;
 const isTriggered = commits.some((subject) => triggers.test(subject));
 const touchesRule = changed.some(
-  (file) => ruleEntry.test(file) && !file.endsWith('/index.mjs'),
+  (file) => ruleEntry.test(file) && !file.endsWith('/index.ts'),
 );
 const addsAdr = changed.some((file) =>
   /^docs\/decisions\/\d{4}-.+\.md$/.test(file),
