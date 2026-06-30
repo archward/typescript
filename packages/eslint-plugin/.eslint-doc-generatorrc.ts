@@ -1,7 +1,7 @@
+import type { GenerateOptions } from 'eslint-doc-generator';
 import prettier from 'prettier';
 
-/** @type {import('eslint-doc-generator').GenerateOptions} */
-const config = {
+const config: GenerateOptions = {
   ruleDocTitleFormat: 'name',
   ruleListColumns: ['name', 'description', 'fixable'],
   postprocess: async (content, path) => {

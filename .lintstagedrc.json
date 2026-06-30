@@ -1,5 +1,5 @@
 {
-  "*.{mjs,js}": [
+  "*.{ts,mts,cts}": [
     "eslint --fix",
     "prettier --write",
     "cspell --no-must-find-files"

@@ -1,5 +1,5 @@
-import adrStructure from './adr-structure.mjs';
-import noComments from './no-comments.mjs';
+import adrStructure from './adr-structure';
+import noComments from './no-comments';
 
 export default {
   'base/adr-structure': adrStructure,

@@ -18,13 +18,15 @@ jobs:
           node-version: 22
           cache: pnpm
       - run: pnpm install --frozen-lockfile
+      - run: pnpm build
       - run: pnpm lint
       - run: pnpm typecheck
-      - run: pnpm -C packages/eslint-plugin test
+      - run: pnpm test
       - run: pnpm format:check
       - run: pnpm doc:check
       - run: pnpm spell
       - run: pnpm knip
+      - run: pnpm dup
       - run: pnpm check:parity
       - run: pnpm check:adr-numbering
       - run: pnpm exec changeset status --since=origin/main

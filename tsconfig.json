@@ -1,13 +1,33 @@
 {
   "compilerOptions": {
-    "module": "nodenext",
-    "moduleResolution": "nodenext",
-    "target": "es2023",
-    "allowJs": true,
-    "checkJs": true,
-    "noEmit": true,
+    "ignoreDeprecations": "6.0",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "target": "ES2023",
+    "lib": ["ES2023"],
+    "types": ["node"],
+    "paths": {
+      "@eslint-plugin": ["./packages/eslint-plugin/src/index.ts"],
+      "@eslint-plugin/*": ["./packages/eslint-plugin/src/*"]
+    },
     "strict": true,
-    "skipLibCheck": true
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "noEmit": true
   },
-  "include": ["eslint.config.mjs"]
+  "include": [
+    "packages/*/src/**/*.ts",
+    "packages/*/test/**/*.ts",
+    "scripts/**/*.ts",
+    "eslint.config.ts",
+    "vitest.config.ts",
+    "packages/eslint-plugin/tsup.config.ts",
+    "packages/eslint-plugin/.eslint-doc-generatorrc.ts"
+  ]
 }

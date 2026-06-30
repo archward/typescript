@@ -1,19 +1,18 @@
 # base/no-comments
 
-📝 Disallow comments except tool directives and JSDoc type annotations; rationale belongs in commit messages, ADRs, or docs.
+📝 Disallow comments except tool directives; rationale belongs in commit messages, ADRs, or docs.
 
 <!-- end auto-generated rule header -->
 
-Disallow comments, with two exceptions: **tool directives** and **JSDoc type annotations**. Rationale belongs in commit messages, ADRs, or docs — not in the code, where it drifts out of sync with what it describes and is rarely read.
+Disallow comments, with one exception: **tool directives**. Rationale belongs in commit messages, ADRs, or docs — not in the code, where it drifts out of sync with what it describes and is rarely read.
 
 ## What it allows
 
-- **Tool directives** — `eslint*` / `eslint-disable*`, `global`, `globals`, `exported`, and the TypeScript pragmas `@ts-check`, `@ts-expect-error`, `@ts-ignore`, `@ts-nocheck`. These are machine-read instructions, not prose.
-- **JSDoc type annotations** — a `/** … */` block that starts with `*` and carries an `@`-tag (`@type`, `@param`, `@returns`, `@typedef`, `@satisfies`, …). This keeps `@ts-check` type hints working in build-free `.mjs` files.
+- **Tool directives** — `eslint*` / `eslint-disable*`, `global`, `globals`, `exported`, the TypeScript pragmas `@ts-expect-error`, `@ts-ignore`, `@ts-nocheck`, and triple-slash `/// <reference … />` directives. These are machine-read instructions, not prose.
 
 ## What it rejects
 
-Everything else: line comments (`// note`), plain block comments (`/* note */`), and **tag-less** JSDoc (`/** just prose */`) — a JSDoc block with no `@`-tag is prose, not a type.
+Everything else: line comments (`// note`), block comments (`/* note */`), all JSDoc (`/** @type {number} */`, `/** just prose */`), and the JS-only `@ts-check` pragma. The standard is TypeScript-native, so JSDoc typing and `@ts-check` are redundant — write real TypeScript types instead.
 
 ## Options
 
@@ -36,6 +35,7 @@ Comments are unversioned claims about code that no test enforces; they rot. A de
 /* TODO: revisit */          ← rejected (prose)
 /** the user id */           ← rejected (tag-less JSDoc)
 
-// @ts-check                 ← allowed (directive)
-/** @type {number} */        ← allowed (type annotation)
+// @ts-expect-error legacy   ← allowed (directive)
+// @ts-check                 ← rejected (JS-only pragma)
+/** @type {number} */        ← rejected (use a real TypeScript type)
 ```

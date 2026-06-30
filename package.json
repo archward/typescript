@@ -16,16 +16,19 @@
     "version": "changeset version",
     "release": "changeset publish",
     "prepare": "husky",
+    "build": "pnpm -C packages/eslint-plugin build",
     "typecheck": "tsc",
     "lint": "eslint .",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
+    "test": "vitest run",
     "doc:check": "pnpm -C packages/eslint-plugin doc:check",
-    "spell": "cspell --no-progress --dot \"**/*.{md,mjs,js,cjs,json,yml,yaml}\"",
+    "spell": "cspell --no-progress --dot \"**/*.{md,ts,mts,cts,js,cjs,mjs,json,yml,yaml}\"",
     "knip": "knip",
-    "check:parity": "node scripts/check-parity.mjs",
-    "check:adr-numbering": "node scripts/check-adr-numbering.mjs",
-    "check:adr-on-feat": "node scripts/check-adr-on-feat.mjs"
+    "dup": "jscpd packages scripts",
+    "check:parity": "tsx scripts/check-parity.ts",
+    "check:adr-numbering": "tsx scripts/check-adr-numbering.ts",
+    "check:adr-on-feat": "tsx scripts/check-adr-on-feat.ts"
   },
   "adr": {
     "requireOn": [
@@ -37,16 +40,26 @@
     "@commitlint/cli": "^21.1.0",
     "@commitlint/config-conventional": "^21.1.0",
     "@ddd-arch/eslint-plugin": "workspace:*",
+    "@eslint/js": "^10.0.1",
+    "@eslint/json": "^2.0.0",
+    "@types/node": "^26.0.1",
     "cspell": "^10.0.1",
     "eslint": "^10.5.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-eslint-plugin": "^7.4.0",
     "eslint-plugin-import-x": "^4.17.0",
+    "eslint-plugin-simple-import-sort": "^13.0.0",
     "eslint-plugin-sonarjs": "^4.1.0",
     "husky": "^9.1.7",
+    "jiti": "^2.7.0",
+    "jscpd": "^5.0.11",
     "knip": "^6.21.0",
     "lint-staged": "^17.0.8",
     "prettier": "^3.8.5",
-    "typescript": "^6.0.3"
+    "tsx": "^4.22.4",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.62.1",
+    "vitest": "^4.1.9",
+    "yaml-eslint-parser": "^2.0.0"
   }
 }

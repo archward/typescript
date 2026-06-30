@@ -23,34 +23,40 @@
   },
   "homepage": "https://github.com/swe-amr-abdelaziz/ddd-arch/tree/main/packages/eslint-plugin#readme",
   "bugs": "https://github.com/swe-amr-abdelaziz/ddd-arch/issues",
-  "main": "src/index.mjs",
-  "types": "src/index.d.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "types": "./src/index.d.ts",
-      "default": "./src/index.mjs"
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
     }
   },
   "files": [
-    "src"
+    "dist"
   ],
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
-    "test": "node --test",
+    "build": "tsup",
+    "prepublishOnly": "pnpm build",
     "doc": "eslint-doc-generator",
     "doc:check": "eslint-doc-generator --check"
   },
   "dependencies": {
-    "@eslint/markdown": "^8.0.2"
+    "@eslint/markdown": "^8.0.2",
+    "@typescript-eslint/utils": "^8.62.1"
   },
   "peerDependencies": {
     "eslint": "^10.5.0"
   },
   "devDependencies": {
+    "@typescript-eslint/rule-tester": "^8.62.1",
     "eslint": "^10.5.0",
     "eslint-doc-generator": "^3.6.0",
-    "prettier": "^3.8.5"
+    "prettier": "^3.8.5",
+    "tsup": "^8.5.1",
+    "typescript": "^6.0.3"
   }
 }
