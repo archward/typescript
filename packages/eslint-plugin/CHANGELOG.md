@@ -1,5 +1,11 @@
 # @ddd-arch/eslint-plugin
 
+## 0.2.2
+
+### Patch Changes
+
+- e47962c: Internal refactor of the ADR rule: use a type predicate instead of a type assertion after the title check. No API or behavior change.
+
 ## 0.2.1
 
 ### Patch Changes
