@@ -1,5 +1,11 @@
 # @ddd-arch/eslint-plugin
 
+## 0.4.1
+
+### Patch Changes
+
+- e432a10: Internal refactor: flatten the architecture config entry to `configs/architecture.ts` (matching the rules' `<name>.ts` + `<name>/` convention) and split `resolveLayout` into per-field parsers. Also declare `README.md` explicitly in the package `files` list. No API or behavior change.
+
 ## 0.4.0
 
 ### Minor Changes
