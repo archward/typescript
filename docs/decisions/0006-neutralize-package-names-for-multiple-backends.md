@@ -4,7 +4,7 @@ Date: 2026-06-27
 
 ## Status
 
-Accepted
+Superseded by [ADR-0013](0013-adopt-the-archward-brand-and-per-language-package-names.md)
 
 ## Context
 

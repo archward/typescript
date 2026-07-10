@@ -7,7 +7,7 @@ import baseRules from './rules/base/index';
 import compositionRules from './rules/composition/index';
 
 const plugin = {
-  meta: { name: '@ddd-arch/eslint-plugin', version: '0.0.0' },
+  meta: { name: '@archward/ddd-eslint-plugin', version: '0.0.0' },
   rules: { ...baseRules, ...compositionRules },
 } satisfies TSESLint.FlatConfig.Plugin;
 

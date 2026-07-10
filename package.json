@@ -1,5 +1,5 @@
 {
-  "name": "ddd-arch",
+  "name": "ddd-typescript",
   "version": "0.0.0",
   "private": true,
   "type": "module",
@@ -9,7 +9,7 @@
   "author": "Amr Abdelaziz (https://github.com/swe-amr-abdelaziz)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/swe-amr-abdelaziz/ddd-arch.git"
+    "url": "https://github.com/archward/ddd-typescript.git"
   },
   "scripts": {
     "changeset": "changeset",
@@ -39,7 +39,7 @@
     "@changesets/cli": "^2.31.0",
     "@commitlint/cli": "^21.1.0",
     "@commitlint/config-conventional": "^21.1.0",
-    "@ddd-arch/eslint-plugin": "workspace:*",
+    "@archward/ddd-eslint-plugin": "workspace:*",
     "@eslint-community/eslint-plugin-eslint-comments": "^4.7.2",
     "@eslint/js": "^10.0.1",
     "@eslint/json": "^2.0.0",

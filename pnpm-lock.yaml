@@ -8,6 +8,9 @@ importers:
 
   .:
     devDependencies:
+      '@archward/ddd-eslint-plugin':
+        specifier: workspace:*
+        version: link:packages/eslint-plugin
       '@changesets/cli':
         specifier: ^2.31.0
         version: 2.31.0(@types/node@26.0.1)
@@ -17,9 +20,6 @@ importers:
       '@commitlint/config-conventional':
         specifier: ^21.1.0
         version: 21.1.0
-      '@ddd-arch/eslint-plugin':
-        specifier: workspace:*
-        version: link:packages/eslint-plugin
       '@eslint-community/eslint-plugin-eslint-comments':
         specifier: ^4.7.2
         version: 4.7.2(eslint@10.5.0(jiti@2.7.0))
