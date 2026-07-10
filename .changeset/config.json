@@ -7,5 +7,5 @@
   "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
-  "ignore": ["@ddd-arch/kernel", "@ddd-arch/nestjs"]
+  "ignore": ["@archward/ddd-kernel", "@archward/ddd-nestjs"]
 }

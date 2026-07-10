@@ -1,5 +1,5 @@
 {
-  "name": "@ddd-arch/kernel",
+  "name": "@archward/ddd-kernel",
   "version": "0.0.0",
   "private": true,
   "description": "Framework-free DDD building blocks.",

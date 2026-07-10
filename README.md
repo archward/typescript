@@ -1,18 +1,18 @@
-# ddd-arch
+# Archward — DDD for TypeScript
 
-Deterministic DDD + clean architecture conventions for TypeScript backends, enforced by ESLint. Framework-agnostic core. Opinionated by design: the rules remove architectural choices so a project's structure stays consistent — and machine-checkable — across teams and AI agents.
+Deterministic DDD + clean architecture conventions for TypeScript backends, enforced by ESLint. Framework-agnostic core. Opinionated by design: the rules remove architectural choices so a project's structure stays consistent — and machine-checkable — across teams and AI agents. Part of [Archward](https://github.com/archward) — the same standard, enforced across languages.
 
 ## Packages
 
-| Package                   | Kind          | Purpose                                                     |
-| ------------------------- | ------------- | ----------------------------------------------------------- |
-| `@ddd-arch/eslint-plugin` | devDependency | the `arch/*` rules + composed flat configs                  |
-| `@ddd-arch/kernel`        | dependency    | framework-free DDD base classes the rules enforce           |
-| `@ddd-arch/nestjs`        | dependency    | thin NestJS runtime bridges (event publisher, error filter) |
+| Package                       | Kind          | Purpose                                                     |
+| ----------------------------- | ------------- | ----------------------------------------------------------- |
+| `@archward/ddd-eslint-plugin` | devDependency | the `arch/*` rules + composed flat configs                  |
+| `@archward/ddd-kernel`        | dependency    | framework-free DDD base classes the rules enforce           |
+| `@archward/ddd-nestjs`        | dependency    | thin NestJS runtime bridges (event publisher, error filter) |
 
 ## Roadmap
 
-Each type ships as a bundle — **rule + test + doc** — and, once the taxonomy starts, a matching **generator** (`@ddd-arch/cli`) co-developed with it. `✅` shipped · `⬜` planned · `—` not applicable.
+Each type ships as a bundle — **rule + test + doc** — and, once the taxonomy starts, a matching **generator** (`@archward/ddd-cli`) co-developed with it. `✅` shipped · `⬜` planned · `—` not applicable.
 
 ### Rules & generators
 
@@ -66,10 +66,10 @@ Each layer also gets a **barrel** and an **allowed-imports** rule; adapters carr
 
 - [x] Architecture preset (`configs.architecture`) — topology, dependency direction, default-deny
 - [ ] Cross-context contracts — published language + integration events + consumer ACL
-- [ ] `@ddd-arch/config` — one config shared by the linter and the generator
-- [ ] `@ddd-arch/cli` (`ddd-arch g <type> <name>`) — generators co-developed per type, with a generate → lint CI check
-- [ ] `@ddd-arch/kernel` — `AggregateRoot`, `Entity`, `ValueObject`, `DomainEvent`, …
-- [ ] `@ddd-arch/nestjs` — event publisher + error filter bridges
+- [ ] `@archward/ddd-config` — one config shared by the linter and the generator
+- [ ] `@archward/ddd-cli` (`archward-ddd g <type> <name>`) — generators co-developed per type, with a generate → lint CI check
+- [ ] `@archward/ddd-kernel` — `AggregateRoot`, `Entity`, `ValueObject`, `DomainEvent`, …
+- [ ] `@archward/ddd-nestjs` — event publisher + error filter bridges
 - [ ] Beyond TypeScript — the same standard in other languages (own organization)
 
 ## License
