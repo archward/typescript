@@ -1,5 +1,5 @@
 {
-  "name": "@archward/ddd-nestjs",
+  "name": "@archward/nestjs",
   "version": "0.0.0",
   "private": true,
   "description": "NestJS adapters for the DDD kernel.",

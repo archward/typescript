@@ -1,6 +1,6 @@
 import { ESLintUtils } from '@typescript-eslint/utils';
 
-const REPOSITORY = 'https://github.com/archward/ddd-typescript';
+const REPOSITORY = 'https://github.com/archward/typescript';
 const BRANCH = 'main';
 const DOCS_DIR = 'packages/eslint-plugin/docs/rules';
 

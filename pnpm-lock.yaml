@@ -8,7 +8,7 @@ importers:
 
   .:
     devDependencies:
-      '@archward/ddd-eslint-plugin':
+      '@archward/eslint-plugin':
         specifier: workspace:*
         version: link:packages/eslint-plugin
       '@changesets/cli':

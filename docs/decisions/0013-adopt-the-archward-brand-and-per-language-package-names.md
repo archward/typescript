@@ -4,7 +4,7 @@ Date: 2026-07-10
 
 ## Status
 
-Accepted
+Superseded by [ADR-0014](0014-one-plugin-per-language-with-architectures-as-composed-config.md)
 
 ## Context
 
