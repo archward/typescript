@@ -1,4 +1,4 @@
-import ddd from '@archward/ddd-eslint-plugin';
+import ddd from '@archward/eslint-plugin';
 import eslint from '@eslint/js';
 import json from '@eslint/json';
 import comments from '@eslint-community/eslint-plugin-eslint-comments/configs';

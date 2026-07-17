@@ -1,18 +1,18 @@
-# @archward/ddd-eslint-plugin
+# @archward/eslint-plugin
 
 Deterministic DDD + clean architecture ESLint rules for TypeScript backends. Framework-agnostic core.
 
 ## Install
 
 ```sh
-pnpm add -D @archward/ddd-eslint-plugin
+pnpm add -D @archward/eslint-plugin
 ```
 
 ## Usage
 
 ```js
 // eslint.config.mjs
-import ddd from '@archward/ddd-eslint-plugin';
+import ddd from '@archward/eslint-plugin';
 
 export default [
   ...ddd.configs.adr, // opt-in: lint docs/decisions/*.md
